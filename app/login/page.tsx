@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import {auth} from "@/app/utils/firebase"
 import {signInWithEmailAndPassword} from "firebase/auth"
+import {setCookie} from "cookies-next"
 
 const Login = () =>{
 
@@ -12,6 +13,8 @@ const Login = () =>{
     })
 
     const submit = async () =>{
+
+           
         const res = await signInWithEmailAndPassword(
             auth,
             formState.email,
@@ -22,6 +25,11 @@ const Login = () =>{
             email:"",
             password: ""
         })
+
+         const tokenVal = await res.user.getIdToken();
+         console.log("Token:", tokenVal);
+
+         setCookie("token" , tokenVal, {maxAge: 60 * 60 * 3})
     }
     return (
         <div>
