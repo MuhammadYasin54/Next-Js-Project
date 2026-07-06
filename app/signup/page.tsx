@@ -4,12 +4,13 @@ import { app, auth, dataBase } from "@/app/utils/firebase"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { addDoc, collection } from "firebase/firestore";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 
 const SignUp = () => {
    
-    
+  const router = useRouter()    
     const [formState, SetFormStates] = useState({
         userName: "",
         email: "",
@@ -44,7 +45,7 @@ const SignUp = () => {
             password: ""
         })
         alert ("Account Created Successfully, Please click on Login Button")
-   
+        router.push("/login")
     }
 
     return (
