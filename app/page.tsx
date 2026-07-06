@@ -2,9 +2,11 @@
 import React, { useEffect } from "react"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "@/app/utils/firebase"
+import { useRouter } from "next/navigation"
 
 
 const Home = () => {
+  const router = useRouter()
 
   useEffect(() => {
     const fetchActiveUser = () => {
@@ -15,10 +17,16 @@ const Home = () => {
         else {
           console.log("no User is Found!")
         }
+        if (!user) {
+        router.push("/login");
+    }
       })
     }
+
     fetchActiveUser();
-  }, [])
+  }, [router])
+
+    
 
   const handleGreet = () => {
     console.log("Next JS")

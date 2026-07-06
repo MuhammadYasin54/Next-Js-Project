@@ -12,10 +12,11 @@ export const proxy = (req: NextRequest) => {
     if (cookieValue && publicRoutes.includes(path)){
         console.log("Accessing Public Routes")
         return NextResponse.redirect(new URL("/", req.url))
-        window.location.reload();
+        
     }
     if (!cookieValue && privateRoutes.includes(path)) {
         console.log("Accessing Private Routes");
         return NextResponse.redirect(new URL("/login", req.url))
     }
+
 }
