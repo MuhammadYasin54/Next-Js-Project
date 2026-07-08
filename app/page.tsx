@@ -4,6 +4,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth"
 import { auth } from "@/app/utils/firebase"
 import { useRouter } from "next/navigation"
 import { deleteCookie, getCookie } from "cookies-next"
+import NavBar from "@/components/navbar/page"
 
 
 
@@ -51,6 +52,7 @@ const Home = () => {
   }
   return (
     <div>
+      <NavBar/>
       <h1>Welcome To Next JS</h1>
       <button onClick={handleGreet}>Click Me</button>
     </div>
