@@ -9,7 +9,10 @@ const privateRoutes = [
     "/contact/profile",
     "/about",
     "/services",
-    "/user"
+    "/user",
+    "/new-user",
+    "/server-user",
+    "/animated-text"
 
 ]
 export {publicRoutes, privateRoutes}

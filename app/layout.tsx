@@ -1,5 +1,5 @@
 
-import NavBar from "@/components/navbar/page";
+
 import "./globals.css"
 const RootLayout =({
   children,
@@ -12,8 +12,9 @@ const RootLayout =({
 
       <body className="min-h-full flex flex-col"
       cz-shortcut-listen="true"
+      
       >
-      <NavBar/>        
+           
         {children}</body>
     </html>
   );

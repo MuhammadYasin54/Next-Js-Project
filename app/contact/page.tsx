@@ -2,6 +2,8 @@
 import { collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { dataBase } from "../utils/firebase";
+import NavBar from "@/components/navbar/page";
+
 
 const ContactScreen = () =>{
 
@@ -55,6 +57,7 @@ const ContactScreen = () =>{
     },[])
     return (
         <div>
+            <NavBar/>
             <h1>Welcome to Contact Screen!</h1>
             <h3>Users Email</h3>
             <ul>

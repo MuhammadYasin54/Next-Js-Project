@@ -1,6 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import NavBar from "@/components/navbar/page"
 
 const Users = () =>{
       const router = useRouter();
@@ -22,7 +23,9 @@ const Users = () =>{
         fetchUsers();
     },[])
     return (
+        
         <div>
+            <NavBar/>
             <h1>Users List Screen!</h1>
 
             <ul>
